@@ -42,9 +42,10 @@
       {% endif %}
     <a href="{{ site.github.repository_url }}" class="btn">Home</a>
     {% assign contents_dir = site.github.repository_url | append: '/contents' %}
-    {% for folder in site.static_files %}
-    {% if folder.path contains 'contents/' and folder.path != 'contents/' %}
-      {% assign folder_name = folder.path | remove: 'contents/' | split: '/' | first %}
+    {% assign contents_folders = site.static_files | map: 'path' | uniq | sort %}
+    {% for folder in contents_folders %}
+      {% if folder contains 'contents/' and folder != 'contents/' and folder endswith '/' %}
+        {% assign folder_name = folder | remove: 'contents/' | split: '/' | first %}
         <a href="{{ contents_dir }}/{{ folder_name }}" class="btn">{{ folder_name }}</a>
       {% endif %}
     {% endfor %}
