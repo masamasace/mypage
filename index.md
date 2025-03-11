@@ -2,7 +2,7 @@
 このページは自動生成されています。
 
   - [template](template.md)
-  - **研究**
-    - [note1](研究/note1.md)
-    - [note2](研究/note2.md)
-    - [note3](研究/note3.md)
+  - **research**
+    - [note1](research/note1.md)
+    - [note2](research/note2.md)
+    - [note3](research/note3.md)
