@@ -42,8 +42,8 @@
       {% endif %}
     {% assign contents_dir = site.github.repository_url | append: '/contents' %}
     {% for folder in site.static_files %}
-      {% if folder.path contains 'contents/' and folder.path != 'contents/' %}
-        {% assign folder_name = folder.path | split: '/' | last %}
+    {% if folder.path contains 'contents/' and folder.path != 'contents/' %}
+      {% assign folder_name = folder.path | remove: 'contents/' | split: '/' | first %}
         <a href="{{ contents_dir }}/{{ folder_name }}" class="btn">{{ folder_name }}</a>
       {% endif %}
     {% endfor %}
