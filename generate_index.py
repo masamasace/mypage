@@ -21,9 +21,8 @@ def generate_index():
         for file in sorted(files):
             if file.endswith(".md"):
                 file_path = os.path.join(root, file)
-                rel_path = os.path.relpath(file_path, CONTENT_DIR)
                 title = file.replace(".md", "")
-                index_content.append(f"{indent}  - [{title}]({rel_path})")
+                index_content.append(f"{indent}  - [{title}]({file_path})")
 
     with open("index.md", "w", encoding="utf-8") as f:
         f.write("\n".join(index_content))
