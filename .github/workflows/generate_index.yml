@@ -1,0 +1,25 @@
+name: Generate Index Page
+
+on:
+  push:
+    branches:
+      - main  # main ブランチに変更があるたびに実行
+
+jobs:
+  generate-index:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v4
+
+      - name: Python スクリプトで index.md を生成
+        run: python generate_index.py
+
+      - name: 変更をコミット＆プッシュ
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          git add index.md
+          git commit -m "Auto-generate index.md" || echo "No changes to commit"
+          git push
