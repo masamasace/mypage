@@ -27,7 +27,8 @@ def generate_index():
                 
                 # flont matter中にtitleがあればそれを使用する
                 with open(file_path, "r", encoding="utf-8") as f:
-                    first_line = f.readline()
+                    lines = f.readlines()
+                    first_line = lines[1].strip()
                     if first_line.startswith("title:"):
                         title = first_line.replace("title:", "").strip()
                         title = title.replace("\"", "").replace("\'", "")
