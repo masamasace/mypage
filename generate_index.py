@@ -1,11 +1,14 @@
 import os
+import datetime
 
 # 記事が格納されているフォルダ
-CONTENT_DIR = "articles"  # 適宜変更
+CONTENT_DIR = "contents" 
 
 # index.md のヘッダー
-INDEX_HEADER = """# 技術記事一覧
-このページは自動生成されています。
+now_str = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+INDEX_HEADER = f"""
+# 研究・教育資料一覧
+このページは、{now_str} に生成されました。
 """
 
 def generate_index():
