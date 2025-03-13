@@ -24,7 +24,15 @@ def generate_index():
         for file in sorted(files):
             if file.endswith(".md"):
                 file_path = os.path.join(root, file)
-                title = file.replace(".md", "")
+                
+                # flont matter中にtitleがあればそれを使用する
+                with open(file_path, "r", encoding="utf-8") as f:
+                    first_line = f.readline()
+                    if first_line.startswith("title:"):
+                        title = first_line.replace("title:", "").strip()
+                        title = title.replace("\"", "").replace("\'", "")
+                    else:
+                        title = file.replace(".md", "")
                 index_content.append(f"{indent}  - [{title}]({file_path})")
 
     with open("index.md", "w", encoding="utf-8") as f:
