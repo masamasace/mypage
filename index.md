@@ -1,6 +1,6 @@
 
 # 研究・教育資料一覧
-このページは、2025/03/13 05:25:59 に生成されました。
+このページは、2025/03/17 12:00:52 に生成されました。
 
   - **research**
     - **tool_software**
@@ -15,6 +15,8 @@
           - [RESULT](contents/research/tool_software/lammps/doc/RESULT.md)
           - [VIRIAL](contents/research/tool_software/lammps/doc/VIRIAL.md)
           - **src**
+      - **WebGPU**
+        - [WebGPUを用いた地震波解析](contents/research/tool_software/WebGPU/webgpu.md)
       - **yade**
         - [yade](contents/research/tool_software/yade/yade.md)
         - **src**
