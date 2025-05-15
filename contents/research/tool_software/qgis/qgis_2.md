@@ -76,7 +76,7 @@ qgis関連のモジュールをインポートするための初期化用モジ�
     sys.path.insert(0, qgis_python)
     sys.path.insert(0, qgis_plugins)
 
-    # DLLパスを環境変数PATHに追加（これが非常に重要）
+    # DLLパスを環境変数PATHに追加
     os.environ['PATH'] = qgis_bin + os.pathsep + os.environ['PATH']
 
     # QGISランタイムのための環境変数
